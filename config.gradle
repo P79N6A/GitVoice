@@ -1,0 +1,207 @@
+ext {
+    android = [
+            applicationId    : "com.lahuo.voice",
+            compileSdkVersion: 26,
+            buildToolsVersion: "28.0.3",
+            minSdkVersion    : 19,
+            targetSdkVersion : 26,
+            appVersionCode   : 1,
+            appVersionName   : "0.0.1",
+    ]
+
+    version = [
+            support            : "27.1.0",
+            kotlinJdkVersion   : "1.2.61",
+            junit              : "4.12",
+            testRunner         : "1.0.2",
+            espresso           : "3.0.2",
+            constraint         : "2.0.0-alpha1",
+
+            kotlin_reflect     : "1.2.31",
+
+            rxjava             : "2.2.2",
+            rxandroid          : "2.1.0",
+
+            retrofit           : "2.3.0",
+            rxjavaAdapter      : "2.3.0",
+            fastJsonConverter  : "2.1.0",
+            okhttp             : "3.10.0",
+            okhttpLogging      : "3.5.0",
+
+            multidex           : "1.0.3",
+            multitype          : "3.3.3",
+            rxbinding2         : "2.0.0",
+            fastJson           : "1.2.41",
+            logger             : "1.15",
+
+            glide              : "4.8.0",
+            glide_compiler     : "4.8.0",
+            glideTransformation: "3.3.0",
+
+            leakcanary         : "1.5.1",
+            roundedimageview   : "2.3.0",
+            statusbarutil      : "1.5.1",
+            jpush              : "3.1.1",
+            jcore              : "1.1.9",
+
+            arouterapi         : "1.3.1",
+            aroutercompiler    : "1.1.4",
+
+            picker             : "1.5.5",
+            aspectjrt          : "1.8.9",
+            banner             : "1.4.9",
+            permissions        : "0.9.5@aar",
+
+            pgyUpdate          : "2.8.1",
+            pictureSelector    : "v2.2.3",
+            sophix             : "3.2.4",
+
+            lottie             : "2.7.0",
+
+            bottomNavigation   : "1.4.1",
+
+            smartTablayout     : "1.6.1@aar",
+
+            adapterHelper      : "2.9.30",
+
+            alertDialog        : "1.3",
+
+            wechatPay          : "5.1.6",
+
+            tecentBugly        : "2.6.6",
+
+            feedBack           : "3.1.2",
+            utdid              : "1.1.5.3",
+            ut                 : "5.1.0",
+            aliUtils           : "1.1.1",
+
+            umengAnaly         : "6.1.4",
+    ]
+
+
+    dependencies = [
+
+            junit              : "junit:junit:${version["junit"]}",
+            testRunner         : "com.android.support.test:runner:${version["testRunner"]}",
+            espresso           : "com.android.support.test.espresso:espresso-core:${version["espresso"]}",
+
+            supportV7          : "com.android.support:appcompat-v7:${version["support"]}",
+            supportV4          : "com.android.support:support-v4:${version["support"]}",
+            supportDesign      : "com.android.support:design:${version["support"]}",
+            /* 添加CardView */
+            cardView           : "com.android.support:cardview-v7:${version["support"]}",
+            /* 添加RecyclerView */
+            recyclerview       : "com.android.support:recyclerview-v7:${version["support"]}",
+
+            constraint         : "com.android.support.constraint:constraint-layout:${version["constraint"]}",
+
+            // 添加Kotlin
+//            kotlin             : 'org.jetbrains.kotlin:kotlin-stdlib-jre7:1.2.31',
+            kotlin_jdk         : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${version["kotlinJdkVersion"]}",
+            kotlin_reflect     : "org.jetbrains.kotlin:kotlin-reflect:${version["kotlin_reflect"]}",
+
+            /* 添加Rxjava */
+            rxjava             : "io.reactivex.rxjava2:rxjava:${version["rxjava"]}",
+            rxandroid          : "io.reactivex.rxjava2:rxandroid:${version["rxandroid"]}",
+
+            /* 添加网络请求库 retrofit */
+            retrofit           : "com.squareup.retrofit2:retrofit:${version["retrofit"]}",
+            rxjavaAdapter      : "com.squareup.retrofit2:adapter-rxjava2:${version["rxjavaAdapter"]}",
+            fastJsonConverter  : "org.ligboy.retrofit2:converter-fastjson:${version["fastJsonConverter"]}",
+            okhttp             : "com.squareup.okhttp3:okhttp:${version["okhttp"]}",
+            okhttpLogging      : "com.squareup.okhttp3:logging-interceptor:${version["okhttpLogging"]}",
+            //    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+
+            /* 添加多dex打包支持 */
+            multidex           : "com.android.support:multidex:${version["multidex"]}",
+
+            /* 添加多item列表 */
+            multitype          : "me.drakeet.multitype:multitype:${version["multitype"]}",
+
+            /* 控件的点击事件绑定 */
+            rxbinding2         : "com.jakewharton.rxbinding2:rxbinding:${version["rxbinding2"]}",
+
+            /* FastJson 数据解析 */
+            fastJson           : "com.alibaba:fastjson:${version["fastJson"]}",
+
+            /* 日志打印类 */
+            logger             : "com.orhanobut:logger:${version["logger"]}",
+
+            /* 使用glide加载图片 以及  对图片的处理库使用（裁剪、模糊、滤镜）*/
+            glide              : "com.github.bumptech.glide:glide:${version["glide"]}",
+            glide_compiler     : "com.github.bumptech.glide:compiler:${version["glide_compiler"]}",
+
+            glideTransformation: "jp.wasabeef:glide-transformations:${version["glideTransformation"]}",
+
+            //    内存泄漏工具
+            leakcanary         : "com.squareup.leakcanary:leakcanary-android:${version["leakcanary"]}",
+
+            /* 添加圆角图片 */
+            roundedimageview   : "com.makeramen:roundedimageview:${version["roundedimageview"]}",
+
+            // 添加Status bar
+            statusbarutil      : "com.jaeger.statusbarutil:library:${version["statusbarutil"]}",
+
+            /* 此处以JPush 3.1.1 版本为例 */
+            jpush              : "cn.jiguang.sdk:jpush:${version["jpush"]}",
+            /* 此处以JCore 1.1.9 版本为例 */
+            jcore              : "cn.jiguang.sdk:jcore:${version["jcore"]}",
+
+            // 添加ARouter 路由
+            arouterapi         : "com.alibaba:arouter-api:${version["arouterapi"]}",
+            aroutercompiler    : "com.alibaba:arouter-compiler:${version["aroutercompiler"]}",
+
+            // Picker
+            picker             : "cn.qqtheme.framework:WheelPicker:${version["picker"]}",
+
+            // 添加切面
+            aspectjrt          : "org.aspectj:aspectjrt:${version["aspectjrt"]}",
+
+            // 添加轮播
+            banner             : "com.youth.banner:banner:${version["banner"]}",
+
+            // 添加 权限库
+            permissions        : "com.tbruyelle.rxpermissions2:rxpermissions:${version["permissions"]}",
+
+            /* 添加蒲公英自动升级*/
+            pgyUpdate          : "com.pgyersdk:sdk:${version["pgyUpdate"]}",
+
+            // 添加图片选择库
+            pictureSelector    : "com.github.LuckSiege.PictureSelector:picture_library:${version["pictureSelector"]}",
+
+            // 添加阿里 Sophix 热修复
+            sophix             : "compile com.aliyun.ams:alicloud-android-hotfix${version["sophix"]}",
+
+            // 动画库
+            lottie             : "com.airbnb.android:lottie:${version["lottie"]}",
+
+            /* 添加底部导航 */
+            bottomNavigation   : "com.ashokvarma.android:bottom-navigation-bar:${version["bottomNavigation"]}",
+
+            /*滑动*/
+            smartTablayout     : "com.ogaclejapan.smarttablayout:library:${version["smartTablayout"]}",
+
+            adapterHelper      : "com.github.CymChad:BaseRecyclerViewAdapterHelper:${version["adapterHelper"]}",
+
+            /*友好的提示框*/
+            alertDialog        : "cn.pedant.sweetalert:library:${version["alertDialog"]}",
+
+            /*微信支付*/
+            wechatPay          : "com.tencent.mm.opensdk:wechat-sdk-android-with-mta:${version["wechatPay"]}",
+
+            /*腾讯bugly*/
+            tecentBugly        : "com.tencent.bugly:crashreport:${version["tecentBugly"]}",
+
+            /*阿里系sdk*/
+            feedBack           : "com.aliyun.ams:alicloud-android-feedback:${version["feedBack"]}",
+            utdid              : "com.aliyun.ams:alicloud-android-utdid:${version["utdid"]}",
+            ut                 : "com.aliyun.ams:alicloud-android-ut:${version["ut"]}",
+            aliUtils           : "com.aliyun.ams:alicloud-android-utils:${version["aliUtils"]}",
+
+            /* 友盟统计 */
+            umengAnaly         : "com.umeng.analytics:analytics:${version["umengAnaly"]}",
+
+    ]
+    //home是否是作为模块，true的时候是被依赖，false的时候可以独立运行
+    isModuleHomeDebug = true
+}

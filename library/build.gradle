@@ -1,0 +1,131 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.minSdkVersion
+        versionCode rootProject.ext.android.appVersionCode
+        versionName rootProject.ext.android.appVersionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation rootProject.ext.dependencies["junit"]
+    testImplementation rootProject.ext.dependencies["testRunner"]
+    testImplementation rootProject.ext.dependencies["espresso"]
+    api rootProject.ext.dependencies["supportV7"]
+    api(rootProject.ext.dependencies["supportV4"]) {
+        exclude module: 'support-compat'
+        exclude module: 'support-core-utils'
+        exclude module: 'support-fragment'
+        exclude module: 'support-core-ui'
+        exclude module: 'support-annotations'
+    }
+    api(rootProject.ext.dependencies["supportDesign"]) {
+        exclude module: 'support-v4'
+        exclude module: 'support-v7'
+        exclude module: 'appcompat-v7'
+        exclude module: 'recyclerview-v7'
+        exclude module: 'support-annotations'
+        exclude module: 'support-compat'
+    }
+    api(rootProject.ext.dependencies["cardView"]) {
+        exclude group: 'com.android.support'
+    }
+
+    /* 添加Recyclerview */
+    api(rootProject.ext.dependencies["recyclerview"]) {
+        exclude group: 'com.android.support'
+    }
+    api(rootProject.ext.dependencies["constraint"]) {
+    }
+
+    //    api rootProject.ext.dependencies["kotlin"]
+    api rootProject.ext.dependencies["kotlin_reflect"]
+    api rootProject.ext.dependencies["kotlin_jdk"]
+
+    /* 添加Rxjava */
+    api(rootProject.ext.dependencies["rxjava"]) {}
+    api(rootProject.ext.dependencies["rxandroid"]) {
+        exclude group: 'io.reactivex.rxjava2'
+    }
+
+    /* 添加网络请求库 retrofit */
+    api(rootProject.ext.dependencies["retrofit"]) {
+        exclude group: 'com.squareup.okhttp3'
+    }
+    api(rootProject.ext.dependencies["rxjavaAdapter"]) {
+        exclude group: 'com.squareup.retrofit2'
+        exclude group: 'io.reactivex.rxjava2'
+    }
+    api(rootProject.ext.dependencies["fastJsonConverter"]) {
+        exclude group: 'com.squareup.retrofit2'
+        exclude group: 'com.alibaba:fastjson'
+    }
+    api(rootProject.ext.dependencies["okhttp"]) {
+
+    }
+    api(rootProject.ext.dependencies["okhttpLogging"]) {
+        exclude group: 'com.squareup.okhttp3'
+    }
+
+    /* FastJson 数据解析 */
+    api rootProject.ext.dependencies["fastJson"]
+
+    /* 添加多dex打包支持 */
+    api rootProject.ext.dependencies["multidex"]
+
+    /* 控件的点击事件绑定 */
+    api(rootProject.ext.dependencies["rxbinding2"]) {
+        exclude group: 'io.reactivex.rxjava2'
+        exclude group: 'com.android.support'
+    }
+
+    /* 日志打印类 */
+    api rootProject.ext.dependencies["logger"]
+
+    /* 使用glide加载图片 以及  对图片的处理库使用（裁剪、模糊、滤镜）*/
+    api(rootProject.ext.dependencies["glide"]) {
+        exclude group: 'com.android.support'
+    }
+    api(rootProject.ext.dependencies["glideTransformation"]) {
+        exclude group: 'com.github.bumptech.glide'
+    }
+    kapt rootProject.ext.dependencies["glide_compiler"]
+
+    //    内存泄漏工具
+    api rootProject.ext.dependencies["leakcanary"]
+
+    /* 添加圆角图片 */
+    api rootProject.ext.dependencies["roundedimageview"]
+
+    // 添加Status bar
+    api(rootProject.ext.dependencies["statusbarutil"]) {
+        exclude group: 'com.android.support'
+    }
+}
